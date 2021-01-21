@@ -1,0 +1,1 @@
+data class Lion(var state: LionState, var action: LionAction)
