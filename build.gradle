@@ -11,11 +11,19 @@ repositories {
 }
 
 dependencies {
+    implementation group: 'org.testng', name: 'testng', version: '7.3.0'
+    implementation 'org.slf4j:slf4j-log4j12:1.7.30'
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+    implementation 'io.github.microutils:kotlin-logging:2.0.4'
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.7.0")
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
 
 test {
+    useJUnit()
     useJUnitPlatform()
+    useTestNG()
+    maxHeapSize = '1G'
 }
